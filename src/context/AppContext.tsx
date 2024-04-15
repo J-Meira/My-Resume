@@ -34,9 +34,8 @@ export const AppProvider: FC<IAppContextProps> = ({ children }) => {
   }, [isDark]);
 
   const handleChangeLanguage = useCallback((newLanguage: string) => {
-    const test: TLanguageType = LanguageEnum[1] === newLanguage ? 'en' : 'pt';
-    localStorage.setItem('MUI_LANGUAGE', JSON.stringify(test));
-    setLanguage(test);
+    localStorage.setItem('MUI_LANGUAGE', JSON.stringify(newLanguage));
+    setLanguage(newLanguage as TLanguageType);
   }, []);
 
   const theme = useMemo(
@@ -48,19 +47,6 @@ export const AppProvider: FC<IAppContextProps> = ({ children }) => {
           secondary: { main: '#4a6362' },
           error: { main: '#ba1a1a' },
         },
-        // palette: isDark
-        //   ? {
-        //       mode: 'dark',
-        //       primary: { main: '#4ddad8' },
-        //       secondary: { main: '#b0cccb' },
-        //       error: { main: '#ffb4ab' },
-        //     }
-        //   : {
-        //       mode: 'light',
-        //       primary: { main: '#006a69' },
-        //       secondary: { main: '#4a6362' },
-        //       error: { main: '#ba1a1a' },
-        //     },
       }),
     [isDark],
   );
@@ -77,6 +63,25 @@ export const AppProvider: FC<IAppContextProps> = ({ children }) => {
         localStorage.getItem('MUI_THEME_DARk') || 'false',
       );
       if (localDark) setIsDark(true);
+    }
+    if (!localStorage.getItem('MUI_LANGUAGE')) {
+      if (typeof navigator !== 'undefined' && navigator.language) {
+        const userBrowserLanguage = navigator.language
+          .split('-')[0]
+          .toLowerCase();
+        if (userBrowserLanguage in LanguageEnum) {
+          localStorage.setItem(
+            'MUI_LANGUAGE',
+            JSON.stringify(userBrowserLanguage),
+          );
+          setLanguage(userBrowserLanguage as TLanguageType);
+        }
+      }
+    } else {
+      const localLanguage = JSON.parse(
+        localStorage.getItem('MUI_LANGUAGE') || 'en',
+      );
+      setLanguage(localLanguage == 'en' ? 'en' : 'pt');
     }
 
     // eslint-disable-next-line
