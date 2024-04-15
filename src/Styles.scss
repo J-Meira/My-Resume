@@ -1,0 +1,122 @@
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+  .main-container {
+    padding: 0 1rem !important;
+  }
+}
+.main-container {
+  padding: 6rem 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.language-input {
+  color: #fff !important;
+  .MuiInput-input:focus {
+    background-color: transparent;
+  }
+  svg {
+    color: #fff;
+  }
+  &::before {
+    border: 0 !important;
+  }
+  &::after {
+    border: 0 !important;
+  }
+}
+
+h2 {
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+}
+h3 {
+  font-size: 1.8rem !important;
+  font-weight: 500 !important;
+  margin: 16px 0 !important;
+}
+h4 {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+}
+h5 {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+h6 {
+  margin: 12px 0 !important;
+  font-size: 1rem !important;
+  text-decoration: underline;
+}
+
+.sidebar {
+  flex-basis: 25%;
+  flex-grow: 0;
+  max-width: 25%;
+  min-width: 275px;
+  display: flex;
+  flex-direction: column !important;
+
+  align-items: center;
+  padding: 16px;
+
+  .MuiTypography-root,
+  .MuiTableCell-root,
+  a {
+    color: #fff !important;
+  }
+  .MuiTableCell-root {
+    border-color: #fff !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  .skills-list {
+    // padding: 2rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .MuiChip-root {
+      margin: 0.25rem;
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+  }
+}
+.content {
+  max-width: 75%;
+  flex: 1;
+  padding: 32px;
+}
+footer {
+  width: 100%;
+  flex: 0 1 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  .MuiPaper-root {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    padding: 0.5rem;
+    small {
+      font-size: 0.8rem;
+      + small {
+        margin-left: 1rem;
+      }
+    }
+    // a {
+    //   color: $primary;
+    //   text-decoration: none;
+    // }
+    // a:hover {
+    //   color: $primary-dark;
+    // }
+  }
+}
