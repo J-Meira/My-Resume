@@ -1,0 +1,53 @@
+on:
+  release:
+    types: [published]
+
+name: AWS
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub Action
+        uses: actions/checkout@master
+
+      - name: Set git env
+        run: |
+          echo "TAG_NAME=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+
+      - name: Make envfile
+        run: |
+          cat > .env
+          echo "VITE_VERSION=${{ env.TAG_NAME }}" >> .env
+          echo "VITE_V_DATE=$(date +'%Y-%m-%dT%H:%M:%S')" >> .env
+          echo "VITE_PHONE=${{ secrets.PHONE }}" >> .env
+          echo "VITE_EMAIL=${{ secrets.EMAIL }}" >> .env
+          echo "VITE_LINKEDIN=${{ secrets.LINKEDIN }}" >> .env
+          echo "VITE_GITHUB=${{ vars.GITHUB }}" >> .env
+
+          echo "$(<.env)"
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: 20.11
+
+      - name: Install depends
+        run: |
+          yarn --ignore-scripts
+
+      - name: Build
+        run: |
+          yarn build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: sa-east-1
+
+      - name: Deploy to S3
+        run: aws s3 sync ./dist/ s3://${{ vars.S3_BUCKET }} --delete
