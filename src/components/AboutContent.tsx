@@ -94,7 +94,7 @@ export const AboutContent = () => {
         content.data.map((d, i) => (
           <Fragment key={i}>
             {d.title && <Typography variant='h6'>{d.title}</Typography>}
-            <Typography>{d.text}</Typography>
+            <Typography align='justify'>{d.text}</Typography>
           </Fragment>
         ))}
     </Box>
