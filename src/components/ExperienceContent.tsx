@@ -84,14 +84,14 @@ export const ExperienceContent = () => {
   return (
     <Box sx={{ padding: 2 }}>
       {contents.map((c) => (
-        <Box key={c.company} sx={{ mb: 4 }}>
+        <Box className='no-print-break' key={c.company} sx={{ mb: 4 }}>
           <Typography sx={{ textDecoration: 'underline' }} variant='h5'>
             {c.company} - {getPeriod(c.period)}
           </Typography>
           <Typography>{c.location}</Typography>
           {c.jobs &&
             c.jobs.map((j) => (
-              <Box key={j.title} sx={{ m: 1 }}>
+              <Box className='no-print-break' key={j.title} sx={{ m: 1 }}>
                 <Typography variant='caption'>
                   - {j.title} {`(${j.periodDate} - ${getPeriod(j.period)})`}
                 </Typography>

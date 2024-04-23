@@ -100,7 +100,7 @@ export const CoursesContent = () => {
   return (
     <Box sx={{ padding: 2 }}>
       {contents.map((c) => (
-        <Box key={c.title} sx={{ mb: 4 }}>
+        <Box className='no-print-break' key={c.title} sx={{ mb: 4 }}>
           <Link href={c.link} target='_blank'>
             <Typography sx={{ textDecoration: 'underline' }} variant='h5'>
               {c.title}

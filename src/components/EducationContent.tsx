@@ -46,7 +46,7 @@ export const EducationContent = () => {
   return (
     <Box sx={{ padding: 2 }}>
       {contents.map((c) => (
-        <Box key={c.company} sx={{ mb: 4 }}>
+        <Box className='no-print-break' key={c.company} sx={{ mb: 4 }}>
           <Typography sx={{ textDecoration: 'underline' }} variant='h5'>
             {getTitle(c.titles)}
           </Typography>

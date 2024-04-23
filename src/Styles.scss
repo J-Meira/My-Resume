@@ -6,6 +6,9 @@
   .main-container {
     padding: 0 1rem !important;
   }
+  .no-print-break {
+    page-break-inside: avoid;
+  }
 }
 .main-container {
   padding: 6rem 0;
