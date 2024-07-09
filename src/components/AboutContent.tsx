@@ -50,7 +50,7 @@ const contents: IContent[] = [
     language: 'pt',
     data: [
       {
-        text: 'Um experiente Desenvolvedor Full-stack e Designer de Produtos com mais de 8 anos de experiência, aprimorei minhas habilidades e expertise para criar soluções centradas no usuário, visualmente impressionantes e altamente funcionais.',
+        text: 'Um experiente Desenvolvedor Full-stack e Designer de Produto com mais de 8 anos de experiência, aprimorei minhas habilidades e expertise para criar soluções centradas no usuário, visualmente impressionantes e altamente funcionais.',
       },
       {
         title: 'Expertise Front-end:',

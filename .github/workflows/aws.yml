@@ -34,13 +34,16 @@ jobs:
         with:
           node-version: 20.11
 
+      - name: Install PNPM
+        run: npm install -g pnpm
+
       - name: Install depends
         run: |
-          yarn --ignore-scripts
+          pnpm install --ignore-scripts
 
       - name: Build
         run: |
-          yarn build
+          pnpm build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@master
