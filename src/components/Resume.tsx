@@ -38,9 +38,7 @@ export const Resume = () => {
             }}
           />
           <Typography variant='h4'>
-            Full-stack Developer | Product Designer | Front-end Developer
-            (React.Js) | Back-end Developer ( Node.Js, .Net C# 8.0) | Web
-            Development
+            {getDictionary('title', language)}
           </Typography>
           <Typography variant='h5'>
             {getDictionary('location', language)}

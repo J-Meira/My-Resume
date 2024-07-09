@@ -67,6 +67,10 @@ export const ContactTable = () => {
     return value;
   };
 
+  const navigate = (destiny:string) => {
+    window.open(destiny, '_blank')
+  };
+
   const getContactInfo = (contact: IContact) => {
     const info = !contact.isPhone ? contact.info : maskPhone(contact.info);
     return contact.destiny ? (
@@ -77,6 +81,7 @@ export const ContactTable = () => {
       info
     );
   };
+
   return (
     <TableContainer>
       <Table>
@@ -91,7 +96,14 @@ export const ContactTable = () => {
         </TableHead>
         <TableBody sx={{ fontSize: '1.1em' }}>
           {list.map((contact) => (
-            <TableRow key={contact.info}>
+            <TableRow
+              key={contact.info}
+              onClick={contact.destiny ?
+                () => navigate(contact.destiny!):
+                undefined
+              }
+              sx={{ cursor: contact.destiny ? 'pointer' : undefined }}
+            >
               <TableCell sx={{ fontWeight: 600 }}>{contact.icon}</TableCell>
               <TableCell>{getContactInfo(contact)}</TableCell>
             </TableRow>

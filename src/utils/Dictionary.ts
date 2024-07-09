@@ -5,6 +5,7 @@ export type IDictionary = {
 };
 
 export interface IDictionaryLanguage {
+  title: string;
   hours: string;
   yrs: string;
   mos: string;
@@ -20,6 +21,8 @@ export interface IDictionaryLanguage {
 
 export const dictionary: IDictionary = {
   en: {
+    title:
+      'Full-Stack Developer & Product Designer | Expert in React.js, Node.js, .NET (C# 8.0) | Web Development Specialist',
     hours: 'hours',
     yrs: 'yrs',
     mos: 'mos',
@@ -33,6 +36,8 @@ export const dictionary: IDictionary = {
     developed: 'Developed by ',
   },
   pt: {
+    title:
+      'Desenvolvedor Full-stack e Designer de Produto | Especialista em React.js, Node.js, .NET (C# 8.0) | Desenvolvimento Web',
     hours: 'horas',
     yrs: 'anos',
     mos: 'meses',
