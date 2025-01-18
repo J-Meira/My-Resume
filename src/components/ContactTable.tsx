@@ -19,7 +19,7 @@ const list: IContact[] = [
   {
     icon: <MdWhatsapp size={25} />,
     info: import.meta.env.VITE_PHONE,
-    destiny: 'tel:' + import.meta.env.VITE_PHONE,
+    destiny: 'https://wa.me/55' + import.meta.env.VITE_PHONE,
     isPhone: true,
   },
   {
