@@ -73,7 +73,9 @@ export const ContactTable = () => {
   };
 
   const getContactInfo = (contact: IContact) => {
-    const info = !contact.isPhone ? contact.info : maskPhone(contact.info);
+    const info = !contact.isPhone
+      ? contact.info
+      : maskPhone(contact.info || '');
     return contact.destiny ? (
       <a href={contact.destiny} target='_blank' rel='noreferrer'>
         {info}
