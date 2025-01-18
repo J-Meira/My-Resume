@@ -1,4 +1,5 @@
 import { Box, Link, Typography } from '@mui/material';
+
 import { useAppContext } from '../context';
 import { getDictionary } from '../utils';
 

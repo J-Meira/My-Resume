@@ -1,15 +1,17 @@
+import { ReactNode } from 'react';
+
+import { MdWhatsapp, MdMail } from 'react-icons/md';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import {
-  TableContainer,
   Table,
   TableBody,
-  TableRow,
   TableCell,
+  TableContainer,
   TableHead,
+  TableRow,
   Typography,
 } from '@mui/material';
-import { ReactNode } from 'react';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { MdWhatsapp, MdMail } from 'react-icons/md';
+
 import { useAppContext } from '../context';
 import { getDictionary } from '../utils';
 
@@ -48,33 +50,32 @@ export const ContactTable = () => {
   const { language } = useAppContext();
 
   const maskPhone = (value: string) => {
-    value = value.replace(/\D/g, '');
+    const onlyNumbers = value.replace(/\D/g, '');
     if (value.length < 13) {
-      value = value
+      return onlyNumbers
         .replace(/(\d{0})(\d)/, '$1+$2')
         .replace(/(\d{2})(\d)/, '$1 ($2')
         .replace(/(\d{2})(\d)/, '$1) $2')
         .replace(/(\d{4})(\d)/, '$1-$2')
         .replace(/(\d{4})(\d+?$)/, '$1');
-    } else {
-      value = value
-        .replace(/(\d{0})(\d)/, '$1+$2')
-        .replace(/(\d{2})(\d)/, '$1 ($2')
-        .replace(/(\d{2})(\d)/, '$1) $2')
-        .replace(/(\d{5})(\d)/, '$1-$2')
-        .replace(/(\d{4})(\d+?$)/, '$1');
     }
-    return value;
+
+    return onlyNumbers
+      .replace(/(\d{0})(\d)/, '$1+$2')
+      .replace(/(\d{2})(\d)/, '$1 ($2')
+      .replace(/(\d{2})(\d)/, '$1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2')
+      .replace(/(\d{4})(\d+?$)/, '$1');
   };
 
-  const navigate = (destiny:string) => {
-    window.open(destiny, '_blank')
+  const navigate = (destiny: string) => {
+    window.open(destiny, '_blank');
   };
 
   const getContactInfo = (contact: IContact) => {
     const info = !contact.isPhone ? contact.info : maskPhone(contact.info);
     return contact.destiny ? (
-      <a href={contact.destiny} target='_blank'>
+      <a href={contact.destiny} target='_blank' rel='noreferrer'>
         {info}
       </a>
     ) : (
@@ -98,9 +99,8 @@ export const ContactTable = () => {
           {list.map((contact) => (
             <TableRow
               key={contact.info}
-              onClick={contact.destiny ?
-                () => navigate(contact.destiny!):
-                undefined
+              onClick={
+                contact.destiny ? () => navigate(contact.destiny!) : undefined
               }
               sx={{ cursor: contact.destiny ? 'pointer' : undefined }}
             >

@@ -1,2 +1,2 @@
-export * from './LanguageEnum';
 export * from './Dictionary';
+export * from './LanguageEnum';

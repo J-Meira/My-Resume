@@ -17,6 +17,7 @@ export interface IDictionaryLanguage {
   contact: string;
   skills: string;
   developed: string;
+  present: string;
 }
 
 export const dictionary: IDictionary = {
@@ -34,6 +35,7 @@ export const dictionary: IDictionary = {
     contact: 'Contact:',
     skills: 'Skills:',
     developed: 'Developed by ',
+    present: 'present',
   },
   pt: {
     title:
@@ -49,6 +51,7 @@ export const dictionary: IDictionary = {
     contact: 'Contato:',
     skills: 'Habilidades:',
     developed: 'Developed by ',
+    present: 'presente',
   },
 };
 

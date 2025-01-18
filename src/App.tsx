@@ -1,5 +1,7 @@
-import { AppProvider } from './context';
 import { Footer, Header, Resume } from './components';
+
+import { AppProvider } from './context';
+
 import './Styles.scss';
 
 export const App = () => {

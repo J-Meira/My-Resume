@@ -1,14 +1,15 @@
 import {
-  TableContainer,
-  Table,
-  TableCell,
-  TableHead,
-  Typography,
-  Box,
   Chip,
+  Box,
+  Table,
   TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
   TableRow,
+  Typography,
 } from '@mui/material';
+
 import { getDictionary } from '../utils';
 import { useAppContext } from '../context';
 
@@ -23,6 +24,10 @@ const list = [
   'C#',
   '.Net 8.0',
   'Node.Js',
+  'Express.Js',
+  'GraphQL',
+  'MSSQL',
+  'MYSQL',
   'Git',
   'Adobe Creative Suite',
   'Adobe XD',

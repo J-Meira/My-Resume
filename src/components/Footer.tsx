@@ -1,5 +1,7 @@
-import { Paper, Typography, Popover, Link } from '@mui/material';
 import { useState } from 'react';
+
+import { Link, Paper, Popover, Typography } from '@mui/material';
+
 import { useAppContext } from '../context';
 import { getDictionary } from '../utils';
 
@@ -30,9 +32,9 @@ export const Footer = () => {
     <footer className='no-print'>
       <Paper square elevation={4}>
         <Typography
-          component='small'
-          aria-owns={openPopover ? 'version-date-popover' : undefined}
           aria-haspopup='true'
+          aria-owns={openPopover ? 'version-date-popover' : undefined}
+          component='small'
           onMouseEnter={handlePopoverOpen}
           onMouseLeave={handlePopoverClose}
         >
@@ -51,22 +53,22 @@ export const Footer = () => {
           © 2007 - {date.getFullYear()}
         </Typography>
         <Popover
-          id='version-date-popover'
-          sx={{
-            pointerEvents: 'none',
-          }}
-          open={openPopover}
           anchorEl={anchorEl}
           anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'left',
           }}
+          disableRestoreFocus
+          id='version-date-popover'
+          onClose={handlePopoverClose}
+          open={openPopover}
+          sx={{
+            pointerEvents: 'none',
+          }}
           transformOrigin={{
             vertical: 'top',
             horizontal: 'left',
           }}
-          onClose={handlePopoverClose}
-          disableRestoreFocus
         >
           <Typography sx={{ p: 1 }}>{`${getReleaseDate()} (UTC)`}</Typography>
         </Popover>

@@ -1,14 +1,15 @@
+import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import {
   AppBar,
-  Toolbar,
-  Typography,
   Box,
   IconButton,
   FormControl,
   MenuItem,
   Select,
+  Toolbar,
+  Typography,
 } from '@mui/material';
-import { MdLightMode, MdDarkMode } from 'react-icons/md';
+
 import { useAppContext } from '../context';
 
 export const Header = () => {

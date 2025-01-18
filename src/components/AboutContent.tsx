@@ -1,16 +1,18 @@
-import { Box, Typography } from '@mui/material';
-import { TLanguageType } from '../utils';
-import { useAppContext } from '../context';
 import { Fragment, useEffect, useState } from 'react';
 
+import { Box, Typography } from '@mui/material';
+
+import { TLanguageType } from '../utils';
+import { useAppContext } from '../context';
+
 export interface IDataContent {
-  title?: string;
   text: string;
+  title?: string;
 }
 
 export interface IContent {
-  language: TLanguageType;
   data: IDataContent[];
+  language: TLanguageType;
 }
 
 const contents: IContent[] = [
@@ -18,7 +20,7 @@ const contents: IContent[] = [
     language: 'en',
     data: [
       {
-        text: 'A seasoned Full-stack Developer and Product Designer with over 8 years of experience, I have honed my skills and expertise to craft user-centric, visually stunning, and highly functional solutions.',
+        text: 'A seasoned Full-stack Developer and Product Designer with over 9 years of experience, I have honed my skills and expertise to craft user-centric, visually stunning, and highly functional solutions.',
       },
       {
         title: 'Front-end Expertise:',
@@ -50,7 +52,7 @@ const contents: IContent[] = [
     language: 'pt',
     data: [
       {
-        text: 'Um experiente Desenvolvedor Full-stack e Designer de Produto com mais de 8 anos de experiência, aprimorei minhas habilidades e expertise para criar soluções centradas no usuário, visualmente impressionantes e altamente funcionais.',
+        text: 'Um experiente Desenvolvedor Full-stack e Designer de Produto com mais de 9 anos de experiência, aprimorei minhas habilidades e expertise para criar soluções centradas no usuário, visualmente impressionantes e altamente funcionais.',
       },
       {
         title: 'Expertise Front-end:',

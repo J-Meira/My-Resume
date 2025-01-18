@@ -3,15 +3,17 @@ import {
   Box,
   Container,
   Divider,
-  Grid,
+  Grid2,
   Typography,
 } from '@mui/material';
-import { ContactTable } from './ContactTable';
+
 import { AboutContent } from './AboutContent';
-import { ExperienceContent } from './ExperienceContent';
-import { EducationContent } from './EducationContent';
+import { ContactTable } from './ContactTable';
 import { CoursesContent } from './CoursesContent';
+import { EducationContent } from './EducationContent';
+import { ExperienceContent } from './ExperienceContent';
 import { SkillsTable } from './SkillsTable';
+
 import { useAppContext } from '../context';
 import { getDictionary } from '../utils';
 
@@ -19,7 +21,7 @@ export const Resume = () => {
   const { language } = useAppContext();
   return (
     <Container className='main-container'>
-      <Grid container>
+      <Grid2 container>
         <Box bgcolor='primary.main' className='sidebar'>
           <Avatar src='thumb.jpg' sx={{ mt: 2, width: 200, height: 200 }} />
           <Box>
@@ -60,7 +62,7 @@ export const Resume = () => {
           </Typography>
           <CoursesContent />
         </Box>
-      </Grid>
+      </Grid2>
     </Container>
   );
 };

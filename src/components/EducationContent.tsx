@@ -1,5 +1,7 @@
-import { Box, Typography } from '@mui/material';
 import { useCallback } from 'react';
+
+import { Box, Typography } from '@mui/material';
+
 import { useAppContext } from '../context';
 import { TLanguageType } from '../utils';
 
@@ -10,16 +12,16 @@ export interface ITitle {
 
 export interface IContent {
   company: string;
-  period: string;
   location: string;
+  period: string;
   titles: ITitle[];
 }
 
 const contents: IContent[] = [
   {
     company: 'UNIASSELVI',
-    period: '(2014-2017)',
     location: 'Indaial - SC',
+    period: '(2014-2017)',
     titles: [
       {
         language: 'en',
