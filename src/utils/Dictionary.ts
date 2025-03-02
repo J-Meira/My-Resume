@@ -18,6 +18,11 @@ export interface IDictionaryLanguage {
   skills: string;
   developed: string;
   present: string;
+  developer: string;
+  it: string;
+  graphicDesigner: string;
+  administrative: string;
+  teacher: string;
 }
 
 export const dictionary: IDictionary = {
@@ -36,6 +41,11 @@ export const dictionary: IDictionary = {
     skills: 'Skills:',
     developed: 'Developed by ',
     present: 'present',
+     developer: 'Full-Stack Developer',
+    it: 'IT Suport Specialist',
+    graphicDesigner: 'Graphic Designer',
+    administrative: 'Administrative Assistant',
+    teacher: 'Teacher',
   },
   pt: {
     title:
@@ -52,6 +62,11 @@ export const dictionary: IDictionary = {
     skills: 'Habilidades:',
     developed: 'Developed by ',
     present: 'presente',
+    developer: 'Desenvolvedor Full-Stack',
+    it: 'Especialista em Suporte Técnico',
+    graphicDesigner: 'Designer Gráfico',
+    administrative: 'Assistente Administrativo',
+    teacher: 'Professor',
   },
 };
 
