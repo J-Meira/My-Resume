@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { Box, Typography } from '@mui/material';
 
@@ -19,15 +20,29 @@ interface IContent {
   startAt?: Dayjs;
 }
 
-const contents: IContent[] = [
+export const ExperienceContent = () => {
+  const { language } = useAppContext();
+
+  const contents: IContent[] = useMemo(() => ([
   {
-    company: 'FW7 Soluções',
-    startAt: dayjs('2024-08-01'),
+    company: 'GEOvendas',
+    startAt: dayjs('2025-02-20'),
     location: 'Blumenau - SC',
     jobs: [
       {
-        title: 'Full-stack Developer',
-        startAt: dayjs('2024-08-01'),
+        title: getDictionary('developer', language),
+        startAt: dayjs('2025-02-20'),
+      },
+    ],
+  },
+  {
+    company: 'FW7 Soluções',
+    startAt: dayjs('2024-08-20'),
+    location: 'Blumenau - SC',
+    jobs: [
+      {
+        title: getDictionary('developer', language),
+        startAt: dayjs('2024-08-20'),
       },
     ],
   },
@@ -37,7 +52,7 @@ const contents: IContent[] = [
     location: 'Blumenau - SC',
     jobs: [
       {
-        title: 'Full-stack Developer',
+        title: getDictionary('developer', language),
         periodDate: '11/2019 - 01/2024',
         period: 4.3,
       },
@@ -49,31 +64,19 @@ const contents: IContent[] = [
     ],
   },
   {
-    company: 'CEP Paulo Viana',
-    period: 0.6,
+    company: 'SEE-MG',
+    period: 0.8,
     location: 'Teófilo Otoni - MG',
     jobs: [
       {
-        title: 'Professor',
-        periodDate: '08/2016 - 01/2017',
-        period: 0.6,
+        title: getDictionary('teacher', language),
+        periodDate: '06/2016 - 01/2017',
+        period: 0.8,
       },
     ],
   },
   {
-    company: 'E.E. Nª Sª de Fátima',
-    period: 0.7,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
-      {
-        title: 'Professor',
-        periodDate: '06/2016 - 12/2016',
-        period: 0.7,
-      },
-    ],
-  },
-  {
-    company: 'Só Uniformes',
+    company: 'Hunir Confecções',
     period: 1.3,
     location: 'Teófilo Otoni - MG',
     jobs: [
@@ -85,20 +88,66 @@ const contents: IContent[] = [
     ],
   },
   {
+    company: 'Moderna Placas',
+    period: 0.7,
+    location: 'Teófilo Otoni - MG',
+    jobs: [
+      {
+        title: 'Designer',
+        periodDate: '06/2014 - 12/2014',
+        period: 0.7,
+      },
+    ],
+  },
+  {
     company: 'Cato',
     period: 1,
     location: 'Teófilo Otoni - MG',
     jobs: [
       {
-        title: 'Técnico de suporte em TI',
+        title: getDictionary('it', language),
         periodDate: '02/2010 - 01/2011',
         period: 1,
       },
     ],
   },
-];
-export const ExperienceContent = () => {
-  const { language } = useAppContext();
+  {
+    company: 'Cato',
+    period: 1,
+    location: 'Teófilo Otoni - MG',
+    jobs: [
+      {
+        title: getDictionary('it', language),
+        periodDate: '02/2010 - 01/2011',
+        period: 1,
+      },
+    ],
+  },
+  {
+    company: 'Tipo Copias',
+    period: 1.2,
+    location: 'Teófilo Otoni - MG',
+    jobs: [
+      {
+        title: getDictionary('graphicDesigner', language),
+        periodDate: '02/2010 - 01/2011',
+        period: 1.2,
+      },
+    ],
+  },
+    {
+    company: 'Auto Eletrica e Mecânica Mineira',
+    period: 5.8,
+    location: 'Teófilo Otoni - MG',
+    jobs: [
+      {
+        title: getDictionary('administrative', language),
+        periodDate: '01/2003 - 08/2008',
+        period: 5.8,
+      },
+    ],
+  },
+]), [language]);
 
   const getPeriod = (period?: number): string => {
     if (!period) return '';
@@ -132,7 +181,7 @@ export const ExperienceContent = () => {
           <Typography sx={{ textDecoration: 'underline' }} variant='h5'>
             {c.company} - {getPeriod(c.period || getCurrentPeriod(c.startAt))}
           </Typography>
-          <Typography>{c.location}</Typography>
+          <Typography sx={{ fontSize: '0.8rem' }}>{c.location}</Typography>
           {c.jobs &&
             c.jobs.map((j) => (
               <Box className='no-print-break' key={j.title} sx={{ m: 1 }}>
