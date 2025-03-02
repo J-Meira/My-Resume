@@ -28,7 +28,7 @@ const contents: IContent[] = [
       },
       {
         title: 'Back-end Expertise:',
-        text: 'With expertise in both Node.js and .Net C# 8.0, I bring a comprehensive understanding of back-end development to the table. I excel in building robust and scalable server-side applications, ensuring seamless integration with front-end systems and optimal performance.',
+        text: 'With expertise in both Node.js and .Net C#, I bring a comprehensive understanding of back-end development to the table. I excel in building robust and scalable server-side applications, ensuring seamless integration with front-end systems and optimal performance.',
       },
       {
         title: 'Design Philosophy:',
@@ -40,7 +40,7 @@ const contents: IContent[] = [
       },
       {
         title: 'Tech Stack:',
-        text: "My toolkit includes a versatile range of technologies such as React.js, Node.js, .Net C# 8.0, Git, SASS, Redux.js, JavaScript, Typescript, and more. I'm well-versed in Docker for efficient containerization, ensuring seamless deployment and scalability.",
+        text: "My toolkit includes a versatile range of technologies such as React.js, Node.js, .Net C#, Git, SASS, Redux.js, JavaScript, Typescript, and more. I'm well-versed in Docker for efficient containerization, ensuring seamless deployment and scalability.",
       },
       {
         title: 'Continuous Learning:',
@@ -60,7 +60,7 @@ const contents: IContent[] = [
       },
       {
         title: 'Expertise Back-end:',
-        text: 'Com experiência em Node.js e .Net C# 8.0, trago uma compreensão abrangente do desenvolvimento back-end para a mesa. Excelo na construção de aplicativos robustos e escaláveis do lado do servidor, garantindo integração perfeita com sistemas front-end e desempenho ideal.',
+        text: 'Com experiência em Node.js e .Net C#, trago uma compreensão abrangente do desenvolvimento back-end para a mesa. Excelo na construção de aplicativos robustos e escaláveis do lado do servidor, garantindo integração perfeita com sistemas front-end e desempenho ideal.',
       },
       {
         title: 'Filosofia de Design:',
@@ -72,7 +72,7 @@ const contents: IContent[] = [
       },
       {
         title: 'Tecnologias Utilizadas:',
-        text: 'Meu conjunto de ferramentas inclui uma variedade versátil de tecnologias como React.js, Node.js, .Net C# 8.0, Git, SASS, Redux.js, JavaScript, Typescript e muito mais. Estou familiarizado com Docker para uma containerização eficiente, garantindo implantação e escalabilidade sem problemas.',
+        text: 'Meu conjunto de ferramentas inclui uma variedade versátil de tecnologias como React.js, Node.js, .Net C#, Git, SASS, Redux.js, JavaScript, Typescript e muito mais. Estou familiarizado com Docker para uma containerização eficiente, garantindo implantação e escalabilidade sem problemas.',
       },
       {
         title: 'Aprendizado Contínuo:',

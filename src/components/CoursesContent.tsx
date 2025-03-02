@@ -27,7 +27,7 @@ const contents = [
   },
   {
     company: 'Alura',
-    title: '"UX Strategy: divergindo e afunilando ideias',
+    title: 'UX Strategy: divergindo e afunilando ideias',
     link: 'https://cursos.alura.com.br/certificate/d4cf3247-610a-4e73-ad4d-f9cbc6ce5a96',
     date: '12/2021',
     duration: 12,
