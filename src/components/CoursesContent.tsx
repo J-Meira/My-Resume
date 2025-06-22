@@ -6,6 +6,13 @@ import { getDictionary } from '../utils';
 const contents = [
   {
     company: 'Udemy',
+    title: 'Build a Microservices app with .Net and NextJS from scratch',
+    link: 'https://www.udemy.com/certificate/UC-7bdbb3ce-fdec-4506-ac58-321e63717cde/',
+    date: '06/2025',
+    duration: 32.5,
+  },
+  {
+    company: 'Udemy',
     title: 'Learn to build an e-commerce store with .Net, React & Redux',
     link: 'https://www.udemy.com/certificate/UC-5bcbbab4-50fc-4027-aa86-10ba70179a5b/',
     date: '03/2024',
