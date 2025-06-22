@@ -112,29 +112,31 @@ export const CoursesContent = () => {
   return (
     <Box sx={{ padding: 2 }}>
       {contents.map((c) => (
-        <Box className='no-print-break' key={c.title} sx={{ mb: 4 }}>
+        <Box
+          className='no-print-break'
+          key={c.title}
+          sx={{ mb: 4, display: 'flex', flexDirection: 'column' }}
+        >
           <Link href={c.link} target='_blank'>
             <Typography sx={{ textDecoration: 'underline' }} variant='h5'>
               {c.title}
             </Typography>
           </Link>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant='caption'>
-              {`${c.company} - ${c.date} - ${c.duration} ${getDictionary('hours', language)}`}
-            </Typography>
-            {c.repository && (
-              <Link
-                href={c.repository}
-                target='_blank'
-                className='repository-link'
-              >
-                <BsGithub />
-                <Typography variant='caption'>
-                  {getDictionary('repository', language)}
-                </Typography>
-              </Link>
-            )}
-          </Box>
+          <Typography variant='caption'>
+            {`${c.company} - ${c.date} - ${c.duration} ${getDictionary('hours', language)}`}
+          </Typography>
+          {c.repository && (
+            <Link
+              href={c.repository}
+              target='_blank'
+              className='no-print'
+              sx={{ display: 'flex', alignItems: 'center' }}
+            >
+              <Typography variant='caption'>
+                <BsGithub /> {getDictionary('repository', language)}
+              </Typography>
+            </Link>
+          )}
         </Box>
       ))}
     </Box>
