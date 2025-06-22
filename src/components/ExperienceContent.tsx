@@ -23,131 +23,135 @@ interface IContent {
 export const ExperienceContent = () => {
   const { language } = useAppContext();
 
-  const contents: IContent[] = useMemo(() => ([
-  {
-    company: 'GEOvendas',
-    startAt: dayjs('2025-02-20'),
-    location: 'Blumenau - SC',
-    jobs: [
+  const contents: IContent[] = useMemo(
+    () => [
       {
-        title: getDictionary('developer', language),
+        company: 'GEOvendas',
         startAt: dayjs('2025-02-20'),
-      },
-    ],
-  },
-  {
-    company: 'FW7 Soluções',
-    startAt: dayjs('2024-08-20'),
-    location: 'Blumenau - SC',
-    jobs: [
-      {
-        title: getDictionary('developer', language),
-        startAt: dayjs('2024-08-20'),
-      },
-    ],
-  },
-  {
-    company: 'Bludata Software',
-    period: 6.9,
-    location: 'Blumenau - SC',
-    jobs: [
-      {
-        title: getDictionary('developer', language),
-        periodDate: '11/2019 - 01/2024',
-        period: 4.3,
+        location: 'Blumenau - SC',
+        jobs: [
+          {
+            title: getDictionary('developer', language),
+            startAt: dayjs('2025-02-20'),
+          },
+        ],
       },
       {
-        title: 'Designer',
-        periodDate: '05/2017 - 11/2019',
-        period: 2.6,
-      },
-    ],
-  },
-  {
-    company: 'SEE-MG',
-    period: 0.8,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
-      {
-        title: getDictionary('teacher', language),
-        periodDate: '06/2016 - 01/2017',
+        company: 'FW7 Soluções',
         period: 0.8,
+        location: 'Blumenau - SC',
+        jobs: [
+          {
+            title: getDictionary('developer', language),
+            periodDate: '08/2024 - 05/2025',
+            period: 0.8,
+          },
+        ],
       },
-    ],
-  },
-  {
-    company: 'Hunir Confecções',
-    period: 1.3,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
       {
-        title: 'Designer',
-        periodDate: '03/2015 - 05/2016',
+        company: 'Bludata Software',
+        period: 6.9,
+        location: 'Blumenau - SC',
+        jobs: [
+          {
+            title: getDictionary('developer', language),
+            periodDate: '11/2019 - 01/2024',
+            period: 4.3,
+          },
+          {
+            title: 'Designer',
+            periodDate: '05/2017 - 11/2019',
+            period: 2.6,
+          },
+        ],
+      },
+      {
+        company: 'SEE-MG',
+        period: 0.8,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: getDictionary('teacher', language),
+            periodDate: '06/2016 - 01/2017',
+            period: 0.8,
+          },
+        ],
+      },
+      {
+        company: 'Hunir Confecções',
         period: 1.3,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: 'Designer',
+            periodDate: '03/2015 - 05/2016',
+            period: 1.3,
+          },
+        ],
       },
-    ],
-  },
-  {
-    company: 'Moderna Placas',
-    period: 0.7,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
       {
-        title: 'Designer',
-        periodDate: '06/2014 - 12/2014',
+        company: 'Moderna Placas',
         period: 0.7,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: 'Designer',
+            periodDate: '06/2014 - 12/2014',
+            period: 0.7,
+          },
+        ],
       },
-    ],
-  },
-  {
-    company: 'Cato',
-    period: 1,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
       {
-        title: getDictionary('it', language),
-        periodDate: '02/2010 - 01/2011',
+        company: 'Cato',
         period: 1,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: getDictionary('it', language),
+            periodDate: '02/2010 - 01/2011',
+            period: 1,
+          },
+        ],
       },
-    ],
-  },
-  {
-    company: 'Cato',
-    period: 1,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
       {
-        title: getDictionary('it', language),
-        periodDate: '02/2010 - 01/2011',
+        company: 'Cato',
         period: 1,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: getDictionary('it', language),
+            periodDate: '02/2010 - 01/2011',
+            period: 1,
+          },
+        ],
       },
-    ],
-  },
-  {
-    company: 'Tipo Copias',
-    period: 1.2,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
       {
-        title: getDictionary('graphicDesigner', language),
-        periodDate: '02/2010 - 01/2011',
+        company: 'Tipo Copias',
         period: 1.2,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: getDictionary('graphicDesigner', language),
+            periodDate: '02/2010 - 01/2011',
+            period: 1.2,
+          },
+        ],
       },
-    ],
-  },
-    {
-    company: 'Auto Eletrica e Mecânica Mineira',
-    period: 5.8,
-    location: 'Teófilo Otoni - MG',
-    jobs: [
       {
-        title: getDictionary('administrative', language),
-        periodDate: '01/2003 - 08/2008',
+        company: 'Auto Eletrica e Mecânica Mineira',
         period: 5.8,
+        location: 'Teófilo Otoni - MG',
+        jobs: [
+          {
+            title: getDictionary('administrative', language),
+            periodDate: '01/2003 - 08/2008',
+            period: 5.8,
+          },
+        ],
       },
     ],
-  },
-]), [language]);
+    [language],
+  );
 
   const getPeriod = (period?: number): string => {
     if (!period) return '';

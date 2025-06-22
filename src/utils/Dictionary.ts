@@ -23,6 +23,7 @@ export interface IDictionaryLanguage {
   graphicDesigner: string;
   administrative: string;
   teacher: string;
+  repository: string;
 }
 
 export const dictionary: IDictionary = {
@@ -41,11 +42,12 @@ export const dictionary: IDictionary = {
     skills: 'Skills:',
     developed: 'Developed by ',
     present: 'present',
-     developer: 'Full-Stack Developer',
+    developer: 'Full-Stack Developer',
     it: 'IT Suport Specialist',
     graphicDesigner: 'Graphic Designer',
     administrative: 'Administrative Assistant',
     teacher: 'Teacher',
+    repository: 'Repository',
   },
   pt: {
     title:
@@ -67,6 +69,7 @@ export const dictionary: IDictionary = {
     graphicDesigner: 'Designer Gráfico',
     administrative: 'Assistente Administrativo',
     teacher: 'Professor',
+    repository: 'Repositório',
   },
 };
 

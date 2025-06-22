@@ -1,4 +1,5 @@
 import { Box, Link, Typography } from '@mui/material';
+import { BsGithub } from 'react-icons/bs';
 
 import { useAppContext } from '../context';
 import { getDictionary } from '../utils';
@@ -8,13 +9,15 @@ const contents = [
     company: 'Udemy',
     title: 'Build a Microservices app with .Net and NextJS from scratch',
     link: 'https://www.udemy.com/certificate/UC-7bdbb3ce-fdec-4506-ac58-321e63717cde/',
+    repository: 'https://github.com/J-Meira/My-Course-MS',
     date: '06/2025',
-    duration: 32.5,
+    duration: 31.5,
   },
   {
     company: 'Udemy',
     title: 'Learn to build an e-commerce store with .Net, React & Redux',
     link: 'https://www.udemy.com/certificate/UC-5bcbbab4-50fc-4027-aa86-10ba70179a5b/',
+    repository: 'https://github.com/J-Meira/My-Course-Three',
     date: '03/2024',
     duration: 32.5,
   },
@@ -22,6 +25,7 @@ const contents = [
     company: 'Udemy',
     title: 'C# .NET Core 8 with MS SQL Complete Beginner to Master',
     link: 'https://www.udemy.com/certificate/UC-2bb8c09d-f4ac-4e5e-9dd4-8135e2584d82/',
+    repository: 'https://github.com/J-Meira/MyDotNet-Course',
     date: '01/2024',
     duration: 23,
   },
@@ -114,9 +118,23 @@ export const CoursesContent = () => {
               {c.title}
             </Typography>
           </Link>
-          <Typography variant='caption'>
-            {`${c.company} - ${c.date} - ${c.duration} ${getDictionary('hours', language)}`}
-          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Typography variant='caption'>
+              {`${c.company} - ${c.date} - ${c.duration} ${getDictionary('hours', language)}`}
+            </Typography>
+            {c.repository && (
+              <Link
+                href={c.repository}
+                target='_blank'
+                className='repository-link'
+              >
+                <BsGithub />
+                <Typography variant='caption'>
+                  {getDictionary('repository', language)}
+                </Typography>
+              </Link>
+            )}
+          </Box>
         </Box>
       ))}
     </Box>
